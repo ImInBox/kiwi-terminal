@@ -1,11 +1,11 @@
 import { useState } from "react";
-import { Barner, Help } from "./components/Responses";
+import { Baner, Help } from "./components/Responses";
 
 function App() {
   const commands = ["help", "clear", "author", "font"]
 
   const [ input, setInput ] = useState("");
-  const [ output, setOutput ] = useState([{prefix: "", command: "", response: Barner, responseStyle: "text-[#cbc57e]", id: 0}]);
+  const [ output, setOutput ] = useState([{prefix: "", command: "", response: <Baner/>, responseStyle: "text-[#cbc57e]", id: 0}]);
   const [ inputColor, setInputColor ] = useState("#3fc1ee");
 
   let newOutput = {}
@@ -24,7 +24,7 @@ function App() {
               <span className="text-[#cbc57e]">{output.command}</span>
             </p>
             <div>
-              <p className={output.responseStyle}>{output.response}</p>
+            {output.response}
             </div>
           </div>)}
         </pre>
@@ -48,7 +48,7 @@ function App() {
             
             switch(input){
               case commands[0]:
-                newOutput.response = Help
+                newOutput.response = <Help/>
                 newOutput.responseStyle = "text-[#cbc57e]"
                 break;
               case commands[1]:
