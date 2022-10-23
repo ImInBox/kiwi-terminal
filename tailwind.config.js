@@ -5,7 +5,10 @@ module.exports = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        JetBrainsMono: ['JetBrains Mono', 'monospace'],
       },
+    },
   },
   plugins: [],
 }
