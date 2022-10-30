@@ -1,7 +1,6 @@
 <h1 align="center">Kiwi Terminal</h1>
 <p align="center">easy web command line interface</p>
 
-## Screenshots
 ![Start](/screenshots/1.png)
 
 ## Kiwi terminal commands
