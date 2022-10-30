@@ -25,3 +25,25 @@ export function Help() {
         </p>
     )
 }
+
+export function Author() {
+    return(
+        <p className="text-[#cbc57e]">
+            <br />
+            Hi Im the ImInBox author of this project! <br />
+            My github: <a className="underline" href="https://github.com/ImInBox">github.com/ImInBox</a> <br />
+            {" "}
+        </p>
+    )
+}
+
+export function Font() {
+    return(
+        <p className="text-[#cbc57e]">
+            <br />
+            Jet Brains Mono <br />
+            Source: <a className="underline" href="https://www.jetbrains.com/lp/mono/">jetbrains.com/lp/mono</a> <br />
+            {" "}
+        </p>
+    )
+}

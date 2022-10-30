@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from "react";
-import { Baner, Help } from "./components/Responses";
+import { Baner, Help, Author, Font } from "./components/Responses";
 import Prefix from "./components/Prefix";
 
 function App() {
@@ -61,6 +61,12 @@ function App() {
                   break;
                 case commands[2]:
                   clear = true
+                  break;
+                case commands[3]:
+                  newOutput.response = <Author/>
+                  break;
+                case commands[4]:
+                  newOutput.response = <Font/>
                   break;
                 default:
                   newOutput.response = ""
