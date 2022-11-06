@@ -21,7 +21,8 @@
 - [x] nice scroll style
 - [x] auto scroll to bottom
 - [x] set input color to commands
-- [ ] arrows commands history
+- [x] arrows command history
+- [ ] add "unknown command"
 - [ ] login and register
 - [ ] apps
 - [ ] get apps command

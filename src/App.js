@@ -2,6 +2,9 @@ import { useState, useEffect, useRef } from "react";
 import { Baner, Help, Author, Font } from "./components/Responses";
 import Prefix from "./components/Prefix";
 
+let commandHistory = []
+let commandHistorySelector = 0
+
 function App() {
   const commands = ["", "help", "clear", "author", "font"]
 
@@ -47,13 +50,16 @@ function App() {
             <Prefix/>
           </p>
         </pre>
-          <input type="text" ref={inputRef} value={input} onChange={e=>{setInput(e.target.value) 
+          <input name="" type="text" ref={inputRef} value={input} onChange={e=>{setInput(e.target.value) 
           if(commands.indexOf(e.target.value) > -1){setInputColor("#3fc1ee")}else{setInputColor("#ef6d6a")} }} onKeyDown={e=>{
 
             if (e.key === "Enter") {
               newOutput.prefix = <Prefix/>
               newOutput.command = input
               newOutput.id = output.length
+
+              if(input !== ""){commandHistory.push(input)}
+              commandHistorySelector = commandHistory.length
 
               switch(input){
                 case commands[1]:
@@ -80,6 +86,20 @@ function App() {
               }else{
                 setOutput([])
               }
+            } else if (e.key === "ArrowUp") {
+              
+              if (commandHistorySelector > 0) {
+                commandHistorySelector --
+                setInput(commandHistory[commandHistorySelector])
+              }
+            } else if (e.key === "ArrowDown") {
+
+              if (commandHistorySelector < commandHistory.length) {
+                commandHistorySelector ++
+                setInput(commandHistory[commandHistorySelector])
+              }
+            }else if (e.key !== null) {
+              commandHistorySelector = commandHistory.length
             }
           }} className={`bg-transparent text-[${inputColor}] outline-none m-0 p-0 text-[15px] font-JetBrainsMono w-full`}/>
         </div>
