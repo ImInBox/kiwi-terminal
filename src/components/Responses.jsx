@@ -13,6 +13,14 @@ export function Baner() {
     )
 } 
 
+export function UnknowCommand() {
+    return(
+        <p className="text-[#cbc57e] underline">
+            Unknow command
+        </p>
+    )
+}
+
 export function Help() {
     return(
         <p className="text-[#cbc57e]">

@@ -22,7 +22,7 @@
 - [x] auto scroll to bottom
 - [x] set input color to commands
 - [x] arrows command history
-- [ ] add "unknown command"
+- [x] add "unknown command"
 - [ ] login and register
 - [ ] apps
 - [ ] get apps command

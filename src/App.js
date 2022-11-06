@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from "react";
-import { Baner, Help, Author, Font } from "./components/Responses";
+import { Baner, Help, Author, Font, UnknowCommand } from "./components/Responses";
 import Prefix from "./components/Prefix";
 
 let commandHistory = []
@@ -62,6 +62,9 @@ function App() {
               commandHistorySelector = commandHistory.length
 
               switch(input){
+                case commands[0]:
+                  newOutput.response = ""
+                  break
                 case commands[1]:
                   newOutput.response = <Help/>
                   break;
@@ -75,7 +78,7 @@ function App() {
                   newOutput.response = <Font/>
                   break;
                 default:
-                  newOutput.response = ""
+                  newOutput.response = <UnknowCommand/>
               }
 
               setInput("")
